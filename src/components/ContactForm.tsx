@@ -8,13 +8,26 @@ export function ContactForm() {
       className="surface-card p-7"
       onSubmit={(event) => {
         event.preventDefault();
+
         const data = new FormData(event.currentTarget);
         const name = String(data.get("name") || "");
         const email = String(data.get("email") || "");
         const message = String(data.get("message") || "");
-        window.location.href = `mailto:krmdmustafeez@gmail.com?subject=Portfolio contact from ${encodeURIComponent(
-          name,
-        )}&body=${encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`)}`;
+
+        const whatsappMessage = `
+Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}
+        `;
+
+        const whatsappUrl = `https://wa.me/919071271369?text=${encodeURIComponent(
+          whatsappMessage,
+        )}`;
+
+        window.open(whatsappUrl, "_blank");
       }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -27,6 +40,7 @@ export function ContactForm() {
             placeholder="Your name"
           />
         </label>
+
         <label className="grid gap-2 text-sm font-medium text-[var(--text-strong)]">
           Email
           <input
@@ -38,6 +52,7 @@ export function ContactForm() {
           />
         </label>
       </div>
+
       <label className="mt-5 grid gap-2 text-sm font-medium text-[var(--text-strong)]">
         Message
         <textarea
@@ -48,9 +63,10 @@ export function ContactForm() {
           placeholder="Tell me about the opportunity or message..."
         />
       </label>
+
       <button className="btn-primary mt-6" type="submit">
         <FiSend />
-        Send Message
+        Send Message on WhatsApp
       </button>
     </form>
   );
