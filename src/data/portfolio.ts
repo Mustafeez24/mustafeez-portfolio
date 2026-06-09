@@ -15,11 +15,41 @@ export type Project = {
 
 export const navItems = [
   { label: "About", href: "#about" },
+  { label: "Achievements", href: "#achievements" },
   { label: "Skills", href: "#skills" },
   { label: "Learning", href: "#learning" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
+];
+
+export const heroBadges = [
+  "Java Developer",
+  "Google Campus Ambassador (2x)",
+  "HackerRank Crew Member",
+];
+
+export const achievements = [
+  {
+    title: "Google Campus Ambassador",
+    organization: "Google",
+    badge: "2x Selected",
+    points: [
+      "Selected as a Google Campus Ambassador for two consecutive terms.",
+      "Promoted developer programs, learning opportunities, and community engagement.",
+      "Developed leadership, communication, and community-building skills.",
+    ],
+  },
+  {
+    title: "HackerRank Crew Member",
+    organization: "HackerRank",
+    badge: "Crew Member",
+    points: [
+      "Selected as a HackerRank Crew Member.",
+      "Promoting coding culture and problem-solving among students.",
+      "Participating in technical and community initiatives.",
+    ],
+  },
 ];
 
 export const skillGroups: SkillGroup[] = [
@@ -67,7 +97,7 @@ export const projects: Project[] = [
       "A modern developer portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/Mustafeez24",
-    demoUrl: "#home",
+    demoUrl: "https://mustafeez-portfolio.vercel.app",
   },
   {
     title: "AI Career Copilot",
@@ -95,6 +125,7 @@ export const projects: Project[] = [
 export const stats = [
   { label: "Public Profile", value: "Active" },
   { label: "Primary Focus", value: "Java" },
+  { label: "Google Ambassador", value: "2x" },
   { label: "Portfolio", value: "2026" },
 ];
 

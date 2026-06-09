@@ -15,17 +15,21 @@ import {
   FiMoon,
   FiSend,
   FiSun,
+  FiUsers,
   FiX,
 } from "react-icons/fi";
 import { useEffect, useMemo, useState } from "react";
 import {
+  achievements,
   goals,
+  heroBadges,
   learningItems,
   navItems,
   projects,
   skillGroups,
   stats,
 } from "@/data/portfolio";
+import { AchievementCard } from "@/components/AchievementCard";
 import { Badge } from "@/components/Badge";
 import { ContactForm } from "@/components/ContactForm";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -104,6 +108,25 @@ export default function Home() {
                   "Backend Development Learner",
                 ]}
               />
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {heroBadges.map((badge, index) => (
+                <motion.span
+                  key={badge}
+                  initial={{ opacity: 0, y: 14, scale: 0.94 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.55 + index * 0.14,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{ y: -3 }}
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-400"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                  {badge}
+                </motion.span>
+              ))}
             </div>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
               Passionate about building software, solving problems, learning
@@ -203,6 +226,36 @@ export default function Home() {
                 <p className="leading-7 text-[var(--muted)]">{item}</p>
               </article>
             </Reveal>
+          ))}
+        </div>
+        <Reveal delay={0.24}>
+          <article className="surface-card mt-5 p-6">
+            <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-blue-500/10 text-blue-400">
+              <FiUsers />
+            </span>
+            <p className="leading-7 text-[var(--muted)]">
+              Alongside my academic journey, I actively contribute to developer
+              communities as a Google Campus Ambassador and HackerRank Crew
+              Member, where I engage with students, promote technical learning,
+              and strengthen my leadership skills.
+            </p>
+          </article>
+        </Reveal>
+      </section>
+
+      <section id="achievements" className="section">
+        <SectionHeader
+          eyebrow="Achievements & Leadership"
+          title="Recognition beyond the classroom."
+          description="Community roles where I represent developer programs, promote coding culture, and grow as a leader."
+        />
+        <div className="grid gap-5 md:grid-cols-2">
+          {achievements.map((achievement, index) => (
+            <AchievementCard
+              key={achievement.title}
+              achievement={achievement}
+              delay={index * 0.08}
+            />
           ))}
         </div>
       </section>
