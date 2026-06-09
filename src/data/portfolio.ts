@@ -13,6 +13,13 @@ export type Project = {
   demoUrl?: string;
 };
 
+export type Achievement = {
+  title: string;
+  organization: string;
+  badge: string;
+  points: string[];
+};
+
 export const navItems = [
   { label: "About", href: "#about" },
   { label: "Achievements", href: "#achievements" },
@@ -29,7 +36,7 @@ export const heroBadges = [
   "HackerRank Crew Member",
 ];
 
-export const achievements = [
+export const achievements: Achievement[] = [
   {
     title: "Google Campus Ambassador",
     organization: "Google",
@@ -76,7 +83,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Core Concepts",
-    skills: ["OOP", "DSA", "REST APIs", "Authentication", "Database Design"],
+    skills: [
+      "OOP",
+      "DSA",
+      "REST APIs",
+      "Authentication",
+      "Database Design",
+    ],
   },
 ];
 
@@ -95,7 +108,12 @@ export const projects: Project[] = [
     status: "Completed",
     description:
       "A modern developer portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
     githubUrl: "https://github.com/Mustafeez24",
     demoUrl: "https://mustafeez-portfolio.vercel.app",
   },

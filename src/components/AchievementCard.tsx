@@ -30,7 +30,7 @@ export function AchievementCard({
               </p>
             </div>
           </div>
-          <Badge>{achievement.tag}</Badge>
+          <Badge>{achievement.badge}</Badge>
         </div>
         <ul className="mt-6 space-y-3">
           {achievement.points.map((point) => (
